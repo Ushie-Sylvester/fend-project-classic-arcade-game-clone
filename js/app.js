@@ -68,15 +68,13 @@ Player.prototype.update = function() {
     // Prevent player from moving beyond canvas wall boundaries
     if (this.y > 380) {
         this.y = 380;
-    }
 
-    if (this.x > 400) {
+    }if (this.x > 400) {
         this.x = 400;
-    }
 
-    if (this.x < 0) {
+    }if (this.x < 0) {
         this.x = 0;
-    }
+    } 
 
     // Check for player reaching top of canvas and winning the game
     if (this.y < 0) {
@@ -116,12 +114,12 @@ Player.prototype.handleInput = function(keyPress) {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 // Place the player object in a letiable called player
-let allEnemies = [];
+let allEnemies = [],
 
 // Position "y" where the enemies will are created
-let enemyPosition = [60, 140, 220];
-let player = new Player(200, 380, 50);
-let enemy;
+ enemyPosition = [60, 140, 220],
+ player = new Player(200, 380, 50),
+ enemy;
 
 enemyPosition.forEach(function(posY) {
     enemy = new Enemy(0, posY, 100 + Math.floor(Math.random() * 512));
